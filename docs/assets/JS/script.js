@@ -1219,41 +1219,72 @@ function formatPrice(amount, currency = 'AED', locale = 'en-US') {
    ANIMATION COMPTEURS STATISTIQUES
    ============================================ */
 (function initStatsCounter() {
-  const statNumbers = document.querySelectorAll('.stat-number');
-  let animated = false;
+  // Attendre que le DOM soit chargé
+  const init = () => {
+    const statNumbers = document.querySelectorAll('.stat-number');
 
-  const animateCounter = (element) => {
-    const target = parseInt(element.getAttribute('data-count'));
-    const duration = 2000; // 2 secondes
-    const increment = target / (duration / 16); // 60fps
-    let current = 0;
+    if (statNumbers.length === 0) {
+      console.warn('Aucun .stat-number trouvé');
+      return;
+    }
 
-    const updateCounter = () => {
-      current += increment;
-      if (current < target) {
-        element.textContent = Math.floor(current);
-        requestAnimationFrame(updateCounter);
-      } else {
+    // Afficher immédiatement les valeurs finales (fallback)
+    statNumbers.forEach(element => {
+      const target = parseInt(element.getAttribute('data-count'));
+      if (!isNaN(target) && element.textContent === '0') {
         element.textContent = target;
       }
+    });
+
+    let animated = false;
+
+    const animateCounter = (element) => {
+      const target = parseInt(element.getAttribute('data-count'));
+      if (isNaN(target)) return;
+
+      const duration = 2000;
+      const increment = target / (duration / 16);
+      let current = 0;
+
+      const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+          element.textContent = Math.floor(current);
+          requestAnimationFrame(updateCounter);
+        } else {
+          element.textContent = target;
+        }
+      };
+
+      // Réinitialiser à 0 avant l'animation
+      element.textContent = '0';
+      updateCounter();
     };
 
-    updateCounter();
+    // Observer pour déclencher l'animation au scroll
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !animated) {
+            animated = true;
+            statNumbers.forEach(stat => animateCounter(stat));
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+
+      const statsSection = document.querySelector('.stats-section');
+      if (statsSection) {
+        observer.observe(statsSection);
+      }
+    }
   };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !animated) {
-        animated = true;
-        statNumbers.forEach(stat => animateCounter(stat));
-        observer.disconnect();
-      }
-    });
-  }, { threshold: 0.5 });
-
-  const statsSection = document.querySelector('.stats-section');
-  if (statsSection) {
-    observer.observe(statsSection);
+  // Exécuter immédiatement ou attendre le DOM
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 })();
 
