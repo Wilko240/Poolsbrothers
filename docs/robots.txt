@@ -1,0 +1,17 @@
+# robots.txt pour Pool's Brothers
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://poolsbrothers.com/sitemap.xml
+
+# Désactiver l'indexation des ressources
+Disallow: /assets/
+Disallow: /logo/
+Disallow: /images/
+
+# Autoriser l'indexation des pages importantes
+Allow: /
+Allow: /pages/services.html
+Allow: /pages/produits.html
+Allow: /pages/contact.html
