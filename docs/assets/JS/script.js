@@ -1169,6 +1169,211 @@ function formatPrice(amount, currency = 'AED', locale = 'en-US') {
 }
 
 /* ============================================
+   BOUTONS SOCIAUX FLOTTANTS
+   ============================================ */
+(function initSocialButtons() {
+  // Ne pas créer si déjà présent (page contact)
+  if (document.querySelector('.social-fab')) return;
+
+  const socialFab = document.createElement('div');
+  socialFab.className = 'social-fab';
+  socialFab.innerHTML = `
+    <!-- WhatsApp -->
+    <a href="https://wa.me/33XXXXXXXXX?text=Bonjour%20Pool%27s%20Brothers,%20je%20souhaite%20obtenir%20des%20informations."
+      class="fab fab-whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contactez-nous sur WhatsApp">
+      <svg viewBox="0 0 32 32" fill="currentColor">
+        <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.203 1.393 1.393-5.203-0.292-0.507c-1.224-2.162-1.87-4.588-1.87-7.07 0-7.72 6.28-14 14-14s14 6.28 14 14-6.28 14-14 14zM21.305 18.305c-0.288-0.144-1.701-0.839-1.965-0.936-0.264-0.097-0.456-0.144-0.648 0.144s-0.744 0.936-0.912 1.128c-0.168 0.192-0.336 0.216-0.624 0.072s-1.213-0.447-2.31-1.426c-0.854-0.762-1.43-1.704-1.598-1.992s-0.018-0.443 0.126-0.587c0.129-0.129 0.288-0.336 0.432-0.504s0.192-0.288 0.288-0.48c0.096-0.192 0.048-0.36-0.024-0.504s-0.648-1.562-0.888-2.139c-0.234-0.562-0.472-0.486-0.648-0.495-0.168-0.008-0.36-0.010-0.552-0.010s-0.504 0.072-0.768 0.36c-0.264 0.288-1.008 0.984-1.008 2.4s1.032 2.784 1.176 2.976c0.144 0.192 2.034 3.102 4.929 4.35 0.688 0.296 1.225 0.473 1.644 0.605 0.691 0.220 1.320 0.189 1.817 0.115 0.554-0.083 1.701-0.696 1.941-1.368s0.240-1.248 0.168-1.368c-0.072-0.12-0.264-0.192-0.552-0.336z"/>
+      </svg>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/poolsbrothers"
+      class="fab fab-instagram"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Suivez-nous sur Instagram">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+      </svg>
+    </a>
+
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/poolsbrothers"
+      class="fab fab-facebook"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Suivez-nous sur Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+      </svg>
+    </a>
+  `;
+
+  document.body.appendChild(socialFab);
+})();
+
+/* ============================================
+   ANIMATION COMPTEURS STATISTIQUES
+   ============================================ */
+(function initStatsCounter() {
+  const statNumbers = document.querySelectorAll('.stat-number');
+  let animated = false;
+
+  const animateCounter = (element) => {
+    const target = parseInt(element.getAttribute('data-count'));
+    const duration = 2000; // 2 secondes
+    const increment = target / (duration / 16); // 60fps
+    let current = 0;
+
+    const updateCounter = () => {
+      current += increment;
+      if (current < target) {
+        element.textContent = Math.floor(current);
+        requestAnimationFrame(updateCounter);
+      } else {
+        element.textContent = target;
+      }
+    };
+
+    updateCounter();
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !animated) {
+        animated = true;
+        statNumbers.forEach(stat => animateCounter(stat));
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const statsSection = document.querySelector('.stats-section');
+  if (statsSection) {
+    observer.observe(statsSection);
+  }
+})();
+
+/* ============================================
+   BOUTON SCROLL TO TOP
+   ============================================ */
+(function initScrollToTop() {
+  // Créer le bouton
+  const scrollBtn = document.createElement('button');
+  scrollBtn.id = 'scroll-to-top';
+  scrollBtn.innerHTML = '↑';
+  scrollBtn.setAttribute('aria-label', 'Retour en haut');
+  scrollBtn.setAttribute('title', 'Retour en haut');
+  document.body.appendChild(scrollBtn);
+
+  // Afficher/masquer selon le scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollBtn.classList.add('show');
+    } else {
+      scrollBtn.classList.remove('show');
+    }
+  }, { passive: true });
+
+  // Scroll smooth au clic
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+})();
+
+/* ============================================
+   MODE SOMBRE - TOGGLE
+   ============================================ */
+(function initDarkMode() {
+  // Détecter la préférence système
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+  // Récupérer le thème sauvegardé ou utiliser la préférence système
+  const getSavedTheme = () => {
+    const saved = localStorage.getItem('theme');
+    if (saved) return saved;
+    return prefersDark.matches ? 'dark' : 'light';
+  };
+
+  // Appliquer le thème
+  const applyTheme = (theme) => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+
+    // Mettre à jour les icônes
+    const lightIcon = document.querySelector('.theme-icon-light');
+    const darkIcon = document.querySelector('.theme-icon-dark');
+
+    if (lightIcon && darkIcon) {
+      if (theme === 'dark') {
+        lightIcon.classList.remove('active');
+        darkIcon.classList.add('active');
+      } else {
+        lightIcon.classList.add('active');
+        darkIcon.classList.remove('active');
+      }
+    }
+  };
+
+  // Créer le toggle dans le header
+  const createToggle = () => {
+    const nav = document.querySelector('.nav');
+    if (!nav) return;
+
+    const toggle = document.createElement('div');
+    toggle.className = 'theme-toggle';
+    toggle.setAttribute('role', 'button');
+    toggle.setAttribute('aria-label', 'Basculer le mode sombre');
+    toggle.setAttribute('tabindex', '0');
+    toggle.innerHTML = `
+      <div class="theme-icon theme-icon-light">☀️</div>
+      <div class="theme-icon theme-icon-dark">🌙</div>
+    `;
+
+    // Insérer après le sélecteur de langue
+    const langSwitch = nav.querySelector('.lang-switch');
+    if (langSwitch) {
+      langSwitch.parentNode.insertBefore(toggle, langSwitch.nextSibling);
+    } else {
+      nav.appendChild(toggle);
+    }
+
+    // Gérer le clic
+    toggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      applyTheme(newTheme);
+    });
+
+    // Gérer l'appui sur Entrée pour l'accessibilité
+    toggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle.click();
+      }
+    });
+  };
+
+  // Initialiser
+  const initialTheme = getSavedTheme();
+  applyTheme(initialTheme);
+  createToggle();
+
+  // Écouter les changements de préférence système
+  prefersDark.addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+      applyTheme(e.matches ? 'dark' : 'light');
+    }
+  });
+})();
+
+/* ============================================
    INITIALISATION FINALE
    ============================================ */
 document.addEventListener('DOMContentLoaded', () => {
