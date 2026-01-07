@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services d'Entretien de Piscine | Pool's Brothers</title>
+  <meta name="description" content="Découvrez nos services d'entretien de piscine : forfaits annuels, nettoyages ponctuels, dépannages et plus. Devis gratuit sous 24h." />
+  <link rel="stylesheet" href="../assets/CSS/style.css">
+</head>
+
+<body>
+
+<header class="site" id="siteHeader">
+  <div class="container nav">
+    <div class="brand2">
+      <img class="brand-img" src="../logo/hero.jpg" alt="Logo Pool'sBrothers">
+      <span>Pool's Brothers</span>
+    </div>
+    <button type="button" class="menu-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Ouvrir le menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav id="primary-nav" class="nav-links" aria-label="Navigation principale">
+      <a href="../index.html">Accueil</a>
+      <a href="./produits.html">Produits</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+    <div class="lang-switch">
+      <label for="lang" class="sr-only">Langue</label>
+      <select id="lang" aria-label="Changer de langue">
+        <option value="fr">FR</option>
+        <option value="en">EN</option>
+        <option value="ar">AR</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<div id="weather-widget-sidebar"></div>
+
+<!-- Hero Section -->
+<section class="services-hero">
+  <div class="container">
+    <h1>Nos Services d'Entretien</h1>
+    <p>Des solutions sur-mesure pour une piscine impeccable toute l'année. Forfaits flexibles, interventions rapides, et expertise locale à Seignosse.</p>
+  </div>
+</section>
+
+<!-- Services Grid -->
+<section style="padding: 60px 0;">
+  <div class="container">
+    <div class="services-grid">
+      
+      <!-- Service 1: Forfait Annuel Premium -->
+      <div class="service-card featured">
+        <div class="service-header">
+          <div class="service-icon">🏆</div>
+          <h3 class="service-title">Forfait Annuel Premium</h3>
+          <p class="service-subtitle">L'entretien complet sans souci</p>
+        </div>
+        
+        <div class="service-price">
+          <div class="price-amount">
+            <span class="price-currency">€</span>299
+          </div>
+          <div class="price-period">/mois (engagement 12 mois)</div>
+        </div>
+
+        <ul class="service-features">
+          <li><span class="feature-icon">✓</span> 2 visites par mois (bi-hebdomadaire)</li>
+          <li><span class="feature-icon">✓</span> Test et équilibrage de l'eau</li>
+          <li><span class="feature-icon">✓</span> Nettoyage filtres et skimmers</li>
+          <li><span class="feature-icon">✓</span> Traitement chimique inclus</li>
+          <li><span class="feature-icon">✓</span> Inspection équipements</li>
+          <li><span class="feature-icon">✓</span> Rapport mensuel PDF</li>
+          <li><span class="feature-icon">✓</span> Hivernage/mise en route offerts</li>
+          <li><span class="feature-icon">✓</span> Priorité dépannage 24h</li>
+        </ul>
+
+        <button class="btn btn-primary service-cta" onclick="window.location.href='./contact.html?service=premium'">
+          Demander un devis
+        </button>
+      </div>
+
+      <!-- Service 2: Forfait Standard -->
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-icon">⭐</div>
+          <h3 class="service-title">Forfait Standard</h3>
+          <p class="service-subtitle">L'essentiel pour votre piscine</p>
+        </div>
+        
+        <div class="service-price">
+          <div class="price-amount">
+            <span class="price-currency">€</span>179
+          </div>
+          <div class="price-period">/mois (engagement 12 mois)</div>
+        </div>
+
+        <ul class="service-features">
+          <li><span class="feature-icon">✓</span> 1 visite par mois</li>
+          <li><span class="feature-icon">✓</span> Test et équilibrage de l'eau</li>
+          <li><span class="feature-icon">✓</span> Nettoyage filtres et skimmers</li>
+          <li><span class="feature-icon">✓</span> Traitement chimique (en supplément)</li>
+          <li><span class="feature-icon">✓</span> Inspection visuelle équipements</li>
+          <li><span class="feature-icon">✓</span> Rapport trimestriel</li>
+          <li><span class="feature-icon">✓</span> Conseil personnalisé</li>
+          <li><span class="feature-icon">✓</span> -10% sur interventions ponctuelles</li>
+        </ul>
+
+        <button class="btn btn-outline service-cta" onclick="window.location.href='./contact.html?service=standard'">
+          Demander un devis
+        </button>
+      </div>
+
+      <!-- Service 3: Nettoyage Ponctuel -->
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-icon">🧹</div>
+          <h3 class="service-title">Nettoyage Ponctuel</h3>
+          <p class="service-subtitle">Intervention unique</p>
+        </div>
+        
+        <div class="service-price">
+          <div class="price-amount">
+            <span class="price-currency">€</span>89
+          </div>
+          <div class="price-period">intervention</div>
+        </div>
+
+        <ul class="service-features">
+          <li><span class="feature-icon">✓</span> Nettoyage complet du bassin</li>
+          <li><span class="feature-icon">✓</span> Aspiration fond et parois</li>
+          <li><span class="feature-icon">✓</span> Nettoyage ligne d'eau</li>
+          <li><span class="feature-icon">✓</span> Vidange paniers skimmers</li>
+          <li><span class="feature-icon">✓</span> Nettoyage préfiltre pompe</li>
+          <li><span class="feature-icon">✓</span> Test et ajustement pH/chlore</li>
+          <li><span class="feature-icon">✓</span> Durée : 1h30 à 2h</li>
+          <li><span class="feature-icon">✓</span> Intervention sous 48h</li>
+        </ul>
+
+        <button class="btn btn-outline service-cta" onclick="window.location.href='./contact.html?service=ponctuel'">
+          Réserver maintenant
+        </button>
+      </div>
+
+      <!-- Service 4: Nettoyage Approfondi -->
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-icon">✨</div>
+          <h3 class="service-title">Nettoyage Approfondi</h3>
+          <p class="service-subtitle">Remise en état complète</p>
+        </div>
+        
+        <div class="service-price">
+          <div class="price-amount">
+            <span class="price-currency">€</span>249
+          </div>
+          <div class="price-period">intervention</div>
+        </div>
+
+        <ul class="service-features">
+          <li><span class="feature-icon">✓</span> Tout du nettoyage ponctuel +</li>
+          <li><span class="feature-icon">✓</span> Brossage intensif parois/fond</li>
+          <li><span class="feature-icon">✓</span> Détartrage ligne d'eau</li>
+          <li><span class="feature-icon">✓</span> Nettoyage projecteurs</li>
+          <li><span class="feature-icon">✓</span> Contre-lavage filtre</li>
+          <li><span class="feature-icon">✓</span> Traitement anti-algues choc</li>
+          <li><span class="feature-icon">✓</span> Analyse complète de l'eau</li>
+          <li><span class="feature-icon">✓</span> Durée : 3h à 4h</li>
+        </ul>
+
+        <button class="btn btn-outline service-cta" onclick="window.location.href='./contact.html?service=approfondi'">
+          Réserver maintenant
+        </button>
+      </div>
+
+      <!-- Service 5: Hivernage -->
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-icon">❄️</div>
+          <h3 class="service-title">Hivernage Piscine</h3>
+          <p class="service-subtitle">Protection hivernale complète</p>
+        </div>
+        
+        <div class="service-price">
+          <div class="price-amount">
+            <span class="price-currency">€</span>199
+          </div>
+          <div class="price-period">prestation</div>
+        </div>
+
+        <ul class="service-features">
+          <li><span class="feature-icon">✓</span> Nettoyage complet avant hivernage</li>
+          <li><span class="feature-icon">✓</span> Traitement choc</li>
+          <li><span class="feature-icon">✓</span> Ajout produit d'hivernage</li>
+          <li><span class="feature-icon">✓</span> Abaissement niveau d'eau</li>
+          <li><span class="feature-icon">✓</span> Vidange canalisations</li>
+          <li><span class="feature-icon">✓</span> Installation gizzmos et flotteurs</li>
+          <li><span class="feature-icon">✓</span> Mise hors gel équipements</li>
+          <li><span class="feature-icon">✓</span> Bâche incluse (selon contrat)</li>
+        </ul>
+
+        <button class="btn btn-outline service-cta" onclick="window.location.href='./contact.html?service=hivernage'">
+          Demander un devis
+        </button>
+      </div>
+
+      <!-- Service 6: Mise en route -->
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-icon">🌞</div>
+          <h3 class="service-title">Mise en Route Saisonnière</h3>
+          <p class="service-subtitle">Prêt pour la baignade</p>
+        </div>
+        
+        <div class="service-price">
+          <div class="price-amount">
+            <span class="price-currency">€</span>179
+          </div>
+          <div class="price-period">prestation</div>
+        </div>
+
+        <ul class="service-features">
+          <li><span class="feature-icon">✓</span> Retrait bâche et accessoires hiver</li>
+          <li><span class="feature-icon">✓</span> Remise en eau niveau optimal</li>
+          <li><span class="feature-icon">✓</span> Nettoyage complet du bassin</li>
+          <li><span class="feature-icon">✓</span> Vérification équipements</li>
+          <li><span class="feature-icon">✓</span> Remise en service filtration</li>
+          <li><span class="feature-icon">✓</span> Traitement choc démarrage</li>
+          <li><span class="feature-icon">✓</span> Équilibrage complet de l'eau</li>
+          <li><span class="feature-icon">✓</span> Test tous paramètres</li>
+        </ul>
+
+        <button class="btn btn-outline service-cta" onclick="window.location.href='./contact.html?service=mise-en-route'">
+          Demander un devis
+        </button>
+      </div>
+
+      <!-- Service 7: Dépannage -->
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-icon">🔧</div>
+          <h3 class="service-title">Dépannage & Réparation</h3>
+          <p class="service-subtitle">Intervention rapide</p>
+        </div>
+        
+        <div class="service-price">
+          <div class="price-amount">
+            <span class="price-currency">€</span>69
+          </div>
+          <div class="price-period">+ main d'œuvre</div>
+        </div>
+
+        <ul class="service-features">
+          <li><span class="feature-icon">✓</span> Déplacement et diagnostic</li>
+          <li><span class="feature-icon">✓</span> 69€ TTC forfait déplacement</li>
+          <li><span class="feature-icon">✓</span> Main d'œuvre : 45€/h</li>
+          <li><span class="feature-icon">✓</span> Pièces détachées au prix coûtant</li>
+          <li><span class="feature-icon">✓</span> Intervention sous 48h</li>
+          <li><span class="feature-icon">✓</span> Urgence 24h : +50€</li>
+          <li><span class="feature-icon">✓</span> Garantie 6 mois pièces/MO</li>
+          <li><span class="feature-icon">✓</span> Devis gratuit avant réparation</li>
+        </ul>
+
+        <button class="btn btn-outline service-cta" onclick="window.location.href='./contact.html?service=depannage'">
+          Appeler maintenant
+        </button>
+      </div>
+
+      <!-- Service 8: Analyse Expert -->
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-icon">🔬</div>
+          <h3 class="service-title">Analyse Expert de l'Eau</h3>
+          <p class="service-subtitle">Diagnostic complet</p>
+        </div>
+        
+        <div class="service-price">
+          <div class="price-amount">
+            <span class="price-currency">€</span>49
+          </div>
+          <div class="price-period">analyse</div>
+        </div>
+
+        <ul class="service-features">
+          <li><span class="feature-icon">✓</span> Prélèvement à domicile</li>
+          <li><span class="feature-icon">✓</span> 12 paramètres analysés</li>
+          <li><span class="feature-icon">✓</span> pH, chlore, alcalinité, dureté</li>
+          <li><span class="feature-icon">✓</span> Stabilisant, métaux, phosphates</li>
+          <li><span class="feature-icon">✓</span> Rapport détaillé sous 24h</li>
+          <li><span class="feature-icon">✓</span> Recommandations personnalisées</li>
+          <li><span class="feature-icon">✓</span> Plan de traitement sur-mesure</li>
+          <li><span class="feature-icon">✓</span> Suivi téléphonique inclus</li>
+        </ul>
+
+        <button class="btn btn-outline service-cta" onclick="window.location.href='./contact.html?service=analyse'">
+          Commander une analyse
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Tableau Comparatif -->
+<section class="comparison-section">
+  <div class="container">
+    <h2 class="section-title center">Comparatif des Forfaits</h2>
+    <p class="section-sub center">Trouvez la formule qui correspond à vos besoins</p>
+
+    <div class="comparison-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Services inclus</th>
+            <th style="text-align: center;">Standard</th>
+            <th style="text-align: center; background: #0056b3;">Premium</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Fréquence des visites</td>
+            <td style="text-align: center;">1x / mois</td>
+            <td style="text-align: center;">2x / mois</td>
+          </tr>
+          <tr>
+            <td>Test et équilibrage eau</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+          </tr>
+          <tr>
+            <td>Nettoyage filtres/skimmers</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+          </tr>
+          <tr>
+            <td>Produits chimiques inclus</td>
+            <td class="cross">✗</td>
+            <td class="check">✓</td>
+          </tr>
+          <tr>
+            <td>Inspection équipements</td>
+            <td>Visuelle</td>
+            <td>Complète</td>
+          </tr>
+          <tr>
+            <td>Rapports</td>
+            <td style="text-align: center;">Trimestriel</td>
+            <td style="text-align: center;">Mensuel</td>
+          </tr>
+          <tr>
+            <td>Hivernage / Mise en route</td>
+            <td class="cross">✗</td>
+            <td class="check">✓</td>
+          </tr>
+          <tr>
+            <td>Priorité dépannage</td>
+            <td class="cross">✗</td>
+            <td class="check">✓ 24h</td>
+          </tr>
+          <tr>
+            <td>Remise interventions ponctuelles</td>
+            <td style="text-align: center;">-10%</td>
+            <td style="text-align: center;">-20%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <h2 class="section-title center">Questions Fréquentes</h2>
+    <p class="section-sub center">Tout ce que vous devez savoir sur nos services</p>
+
+    <div style="max-width: 800px; margin: 40px auto 0;">
+      <div class="faq-item">
+        <button class="faq-question">
+          Quelle est la zone d'intervention ?
+        </button>
+        <div class="faq-answer">
+          Nous intervenons principalement à Seignosse et dans un rayon de 30 km (Hossegor, Capbreton, Vieux-Boucau, Moliets, etc.). Pour les zones plus éloignées, contactez-nous pour vérifier la faisabilité.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Puis-je suspendre mon forfait en cas d'absence ?
+        </button>
+        <div class="faq-answer">
+          Oui, les forfaits peuvent être suspendus pour une durée maximale de 2 mois par an (vacances, travaux). Prévenez-nous 15 jours à l'avance. Les mois suspendus sont reportés en fin de contrat.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Les produits chimiques sont-ils inclus ?
+        </button>
+        <div class="faq-answer">
+          Dans le forfait Premium, tous les produits d'entretien courant sont inclus (chlore, pH-, floculant, etc.). Pour le forfait Standard, les produits sont facturés au coût réel + 15% de marge. Les interventions ponctuelles incluent les produits de base.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Comment se passe un dépannage en urgence ?
+        </button>
+        <div class="faq-answer">
+          Appelez-nous au 06 XX XX XX XX. Pour les clients Premium, intervention sous 24h garantie. Pour les autres, sous 48h. Le forfait déplacement (69€) est déduit si réparation effectuée sur place. Devis gratuit avant toute intervention coûteuse.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Que se passe-t-il si je veux changer de forfait ?
+        </button>
+        <div class="faq-answer">
+          Vous pouvez passer du forfait Standard au Premium à tout moment (ajustement prorata). Le passage de Premium à Standard n'est possible qu'à la fin de la période d'engagement initiale de 12 mois.
+        </div>
+      </div>
+    </div>
+  </div>  
+</section>      
+
+
+<!-------------------- Footer -------------------------->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand mb-1">
+          <img class="brand-img" src="../logo/hero.jpg" alt="Logo PoolBrothers">
+          <span>Pool's Brothers</span>
+        </div>
+        <p class="mb-1" data-i18n="footer.desc">Produits, équipements et services d'entretien à Seignosse.</p>
+        <p class="copyright mb-0">
+          © <span id="year">2024</span> Pool's Brothers. <span data-i18n="footer.rights">Tous droits réservés.</span>
+        </p>
+      </div>
+
+      <div class="footer-columns">
+        <div>
+          <h4 data-i18n="footer.links">Liens</h4>
+          <a href="../index.html" data-i18n="nav.index">Accueil</a><br/>
+          <a href="./produits.html" data-i18n="nav.products">Produits</a><br/>
+          <a href="./contact.html" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div>
+          <h4 data-i18n="footer.legal">Légal</h4>
+          <a href="./mentions.html" data-i18n="legal.mentions">Mentions légales</a><br/>
+          <a href="./privacy.html" data-i18n="legal.privacy">Politique de confidentialité</a>
+        </div>
+        <div>
+          <h4>Réseaux</h4>
+          <a href="https://www.instagram.com/poolsbrothers" target="_blank" rel="noopener">Instagram</a><br/>
+          <a href="https://www.Whatsapp.com/poolsbrothers" target="_blank" rel="noopener">WhatsApp</a><br/>
+          <a href="./pool_monthly_dashboard.html" target="_blank" rel="noopener">Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div id="weather-widget-mobile">
+    <div class="mobile-weather-item"><span>🌡️</span><span id="mobile-temp">--°</span></div>
+    <div class="mobile-weather-item"><span>💧</span><span id="mobile-humidity">--%</span></div>
+    <div class="mobile-weather-item"><span>🌊</span><span id="mobile-water">--°</span></div>
+    <div class="mobile-weather-item"><span>💨</span><span id="mobile-wind">-- km/h</span></div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="../assets/JS/script.js"></script>
+</body>
+</html>

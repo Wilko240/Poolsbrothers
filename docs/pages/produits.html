@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<!----------------------------HEAD--------------------------> 
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pool's Brothers – Produits & Services pour piscines</title>
+  <meta name="description" content="Pool's Brothers : spécialiste d'entretien de piscine à Seignosse." />
+  <link rel="stylesheet" href="../assets/CSS/style.css">
+
+  
+<!-- Web component model-viewer (module + fallback nomodule pour vieux navigateurs) -->
+<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js "></script>
+
+
+</head>
+<!-----------------------------BODY--------------------------> 
+<body>
+<!-----------------------------Header------------------------>
+  <header class="site" id="siteHeader">
+    <div class="container nav">
+      <div  class="brand2">
+        <img class="brand-img" src="../logo/hero.jpg" alt="Logo Pool'sBrothers">
+        <span>Pool's Brothers</span>
+      </div>
+      <button type="button" class="menu-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav id="primary-nav" class="nav-links" aria-label="Navigation principale">
+        <a href="../index.html">Accueil</a>
+        <a href="./services.html">Services</a>
+        <a href="./contact.html#devis">Contact</a>
+      </nav>
+      <div class="lang-switch">
+        <label for="lang" class="sr-only">Langue</label>
+        <select id="lang" aria-label="Changer de langue">
+          <option value="fr">FR</option>
+          <option value="en">EN</option>
+          <option value="ar">AR</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-head">
+    <div class="container">
+      <h1 data-i18n="products.heading">Catalogue produits</h1>
+      <p class="section-sub" data-i18n="products.sub">Sélection de produits pour l’équipement et l’entretien de votre piscine.</p>
+      <div class="filters">
+        <input id="search" type="search" placeholder="Rechercher (pompe, filtre, robot…)" data-i18n-attr="placeholder:products.search_ph" />
+        <select id="category">
+          <option value="" data-i18n="products.cat_all">Toutes catégories</option>
+          <option value="pompes" data-i18n="products.cat_pumps">Pompes</option>
+          <option value="filtres" data-i18n="products.cat_filters">Filtres</option>
+          <option value="robots" data-i18n="products.cat_robots">Robots</option>
+          <option value="traitement" data-i18n="products.cat_treatment">Traitement</option>
+        </select>
+        <button class="btn btn-secondary" id="reset" data-i18n="products.reset">Réinitialiser</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div id="grid" class="grid catalog"></div>
+    </div>
+  </section>
+
+    <!-------------------- Footer -------------------------->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand mb-1">
+          <img class="brand-img" src="../logo/hero.jpg" alt="Logo PoolBrothers">
+          <span>Pool's Brothers</span>
+        </div>
+        <p class="mb-1" data-i18n="footer.desc">Produits, équipements et services d'entretien à Seignosse.</p>
+        <p class="copyright mb-0">
+          © <span id="year">2024</span> Pool's Brothers. <span data-i18n="footer.rights">Tous droits réservés.</span>
+        </p>
+      </div>
+
+      <div class="footer-columns">
+        <div>
+          <h4 data-i18n="footer.links">Liens</h4>
+          <a href="../index.html" data-i18n="nav.index">Accueil</a><br/>
+          <a href="./produits.html" data-i18n="nav.products">Produits</a><br/>
+          <a href="./contact.html" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div>
+          <h4 data-i18n="footer.legal">Légal</h4>
+          <a href="./mentions.html" data-i18n="legal.mentions">Mentions légales</a><br/>
+          <a href="./privacy.html" data-i18n="legal.privacy">Politique de confidentialité</a>
+        </div>
+        <div>
+          <h4>Réseaux</h4>
+          <a href="https://www.instagram.com/poolsbrothers" target="_blank" rel="noopener">Instagram</a><br/>
+          <a href="https://www.Whatsapp.com/poolsbrothers" target="_blank" rel="noopener">WhatsApp</a><br/>
+          <a href="./pool_monthly_dashboard.html" target="_blank" rel="noopener">Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bannière cookies -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" data-i18n-attr="aria-label:cookies.banner_aria">
+    <div class="cookie-content">
+      <p class="mb-0" data-i18n="cookies.text">
+        Nous utilisons des cookies techniques pour assurer le bon fonctionnement du site.
+      </p>
+      <div class="cookie-actions">
+        <a href="./privacy.html" data-i18n="cookies.learn_more">En savoir plus</a>
+        <button id="cookie-accept" class="btn btn-primary" type="button" data-i18n="cookies.accept">Accepter</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Widget météo mobile (bottom bar) -->
+  <div id="weather-widget-mobile">
+    <div class="mobile-weather-item"><span>🌡️</span><span id="mobile-temp">--°</span></div>
+    <div class="mobile-weather-item"><span>💧</span><span id="mobile-humidity">--%</span></div>
+    <div class="mobile-weather-item"><span>🌊</span><span id="mobile-water">--°</span></div>
+    <div class="mobile-weather-item"><span>💨</span><span id="mobile-wind">-- km/h</span></div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="../assets/JS/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<!----------------------------HEAD--------------------------> 
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="meta.title">Pool's Brothers – Produits & Services pour piscines</title>
+  <meta name="description" data-i18n="meta.desc" content="Pool's Brothers : spécialiste d'entretien de piscine à Seignosse." />
+  <link rel="stylesheet" href="./assets/CSS/style.css">
+</head>
+
+<!-----------------------------BODY--------------------------> 
+<body>
+<!-----------------------------Header------------------------>
+  <header class="site" id="siteHeader">
+    <div class="container nav">
+      <div class="brand2">
+        <img class="brand-img" src="./logo/hero.jpg" alt="Logo Pool's Brothers">
+        <span>Pool's Brothers</span>
+      </div>
+      <button type="button" class="menu-toggle" 
+              aria-controls="primary-nav" 
+              aria-expanded="false" 
+              data-i18n-attr="aria-label:nav.open_menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav id="primary-nav" class="nav-links" data-i18n-attr="aria-label:nav.primary">
+        <a href="./pages/services.html" data-i18n="nav.services">Services</a>
+        <a href="./pages/produits.html" data-i18n="nav.products">Produits</a>
+        <a href="./pages/contact.html#devis" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="lang-switch">
+        <label for="lang" class="sr-only" data-i18n="nav.lang_label">Langue</label>
+        <select id="lang" data-i18n-attr="aria-label:nav.lang_aria">
+          <option value="fr">FR</option>
+          <option value="en">EN</option>
+          <option value="ar">AR</option>
+          <option value="es">ES</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!------------------------Hero---------------------->
+  <section class="hero">
+    <div class="container center">
+      <p class="badge" data-i18n="badge.new">Seignosse et TEST</p>
+      <h1 data-i18n="hero.title">Tout pour une piscine propre — produits, équipements et entretien</h1>
+      <p class="lead" data-i18n="hero.lead">
+        Pompes, filtres, robots, traitement de l'eau, accessoires… Livraison rapide et conseils d'experts.
+        Basé à Seignosse, nous accompagnons particuliers et pros.
+      </p>
+      <div class="actions">
+        <a href="./pages/produits.html" class="btn btn-primary" data-i18n="cta.view_products">Voir les produits</a>
+        <a href="./pages/contact.html" class="btn btn-primary" data-i18n="cta.contact_us">Contactez‑nous</a>
+      </div>
+    </div>
+  </section>
+  <!----------------------Unique Selling Points--------->
+  <section>
+    <div class="container">
+      <h2 class="section-title" data-i18n="usp.title">Pourquoi nous choisir ?</h2>
+      <p class="section-sub" data-i18n="usp.sub">Un service fiable, des produits testés et le support d'une équipe locale.</p>
+      <div class="grid features">
+        <article class="card feature" data-i18n-attr="aria-label:usp.fast_shipping">
+          <div class="icon" aria-hidden="true">🚚</div>
+          <h3 data-i18n="usp.fast_shipping">Livraison rapide</h3>
+          <p data-i18n="usp.fast_shipping_desc">Stock local et expédition en 24–48h sur la plupart des références.</p>
+        </article>
+        <article class="card feature" data-i18n-attr="aria-label:usp.quality">
+          <div class="icon" aria-hidden="true">✅</div>
+          <h3 data-i18n="usp.quality">Qualité certifiée</h3>
+          <p data-i18n="usp.quality_desc">Marques reconnues, garanties constructeurs, support technique.</p>
+        </article>
+        <article class="card feature" data-i18n-attr="aria-label:usp.experts">
+          <div class="icon" aria-hidden="true">🛠️</div>
+          <h3 data-i18n="usp.experts">Conseils d'experts</h3>
+          <p data-i18n="usp.experts_desc">Diagnostic, dimensionnement et entretien adaptés à votre bassin.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!---------------------Services----------------------------->
+  <section id="servicesP">
+    <div class="container">
+      <h2 class="section-title" data-i18n="services.title">Services</h2>
+      <p class="section-sub" data-i18n="services.sub">Installation, maintenance, dépannage et mise en route saisonnière.</p>
+      <div class="grid services">
+        <div class="card">
+          <h3 class="mb-1" data-i18n="services.contract">Contrat d'entretien</h3>
+          <p class="mb-2" data-i18n="services.contract_desc">Visites planifiées, tests de l'eau, ajustements chimiques, rapport PDF.</p>
+          <ul class="mb-0">
+            <li data-i18n="services.freq">Hebdomadaire / bi‑hebdomadaire</li>
+            <li data-i18n="services.includes">Traitements inclus (forfaits)</li>
+            <li><strong data-i18n="services.price">À partir de AED 299 / mois</strong></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="mb-1" data-i18n="services.install">Installation & mise en service</h3>
+          <p class="mb-2" data-i18n="services.install_desc">Pompes, filtres, électrolyseurs, robots, automatismes.</p>
+          <ul class="mb-0">
+            <li data-i18n="services.quote_24h">Devis sous 24 h</li>
+            <li data-i18n="services.warranty">Garantie main‑d'œuvre 12 mois</li>
+            <li><strong data-i18n="services.area">Déplacement Dubai & EAU</strong></li>
+          </ul>
+        </div>
+      </div>
+      <div class="actions center">
+        <a href="./contact.html#devis" class="btn btn-primary" data-i18n="cta.quote">Demander un devis</a>
+      </div>
+    </div>
+  </section>
+  <!-- Teaser catalogue -->
+  <section aria-labelledby="produits-teaser">
+    <div class="container">
+      <h2 id="produits-teaser" class="section-title" data-i18n="catalog.title">Best‑sellers</h2>
+      <p class="section-sub" data-i18n="catalog.sub">Un aperçu de notre sélection — découvrez l'ensemble du catalogue.</p>
+
+      <div class="grid catalog">
+
+          <!-- Produit 1 -->
+        <article class="card product">
+          <div class="img-box">
+            <img class="brand-img2" src="../images/pompe1.jpg" alt="Pompe 1 HP – FlowMax">
+          </div>
+          <h4>Pompe 1 HP – FlowMax</h4>
+          <div class="price">AED 799</div>
+          <p class="mb-2">Pompe éco‑énergétique pour bassins jusqu'à 40 m³.</p>
+          <div class="actions">
+            <button class="btn btn-outline" onclick="addToCart('Pompe 1 HP – FlowMax')" data-i18n="cta.add">Ajouter</button>
+            <a href="./produits.html#pompe" class="btn-link" data-i18n="cta.details">Détails</a>
+          </div>
+        </article>
+
+          <!-- Produit 2 -->
+        <article class="card product">
+          <div class="img-box">
+            <img class="brand-img2" src="../images/filtre1.jpg" alt="Filtre a sable">
+          </div>
+          <h4>Filtre à sable 500 mm</h4>
+          <div class="price">AED 1 099</div>
+          <p class="mb-2">Cuve renforcée, vanne 6 voies, média inclus.</p>
+          <div class="actions">
+            <button class="btn btn-outline" onclick="addToCart('Filtre à sable 500 mm')" data-i18n="cta.add">Ajouter</button>
+            <a href="./produits.html#fils" class="btn-link" data-i18n="cta.details">Détails</a>
+          </div>
+        </article>
+
+          <!-- Produit 3 -->
+        <article class="card product">
+          <div class="img-box">
+            <img class="brand-img2" src="../images/robot1.jpg" alt="Robot Clean Pro">
+          </div>
+          <h4>Robot électrique – CleanPro</h4>
+          <div class="price">AED 2 499</div>
+          <p class="mb-2">Nettoyage fond + parois, cycle 2 h, panier Easy‑Clean.</p>
+          <div class="actions">
+            <button class="btn btn-outline" onclick="addToCart('Robot électrique – CleanPro')" data-i18n="cta.add">Ajouter</button>
+            <a href="./produits.html#robot" class="btn-link" data-i18n="cta.details">Détails</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avis clients -->
+  <section id="avis" aria-labelledby="avis-title">
+    <div class="container">
+      <h2 id="avis-title" class="section-title" data-i18n="reviews.title">Avis clients</h2>
+      <p class="section-sub" data-i18n="reviews.sub">La satisfaction de nos clients est notre meilleure carte de visite.</p>
+
+      <div class="card reviews-summary mb-2">
+        <div class="stars" data-i18n-attr="aria-label:reviews.avg_aria">★★★★★</div>
+        <div>
+          <strong id="reviews-avg">4,8/5</strong> — <span data-i18n="reviews.based_on">basé sur</span> <span id="reviews-count">12</span> <span data-i18n="reviews.reviews">avis</span>
+        </div>
+      </div>
+
+      <div id="reviews-grid" class="grid reviews">
+        <!-- Les avis seront chargés par JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-------------------- Footer -------------------------->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand mb-1">
+          <img class="brand-img" src="./logo/hero.jpg" alt="Logo PoolBrothers">
+          <span>Pool's Brothers</span>
+        </div>
+        <p class="mb-1" data-i18n="footer.desc">Produits, équipements et services d'entretien à Seignosse.</p>
+        <p class="copyright mb-0">
+          © <span id="year">2024</span> Pool's Brothers. <span data-i18n="footer.rights">Tous droits réservés.</span>
+        </p>
+      </div>
+
+      <div class="footer-columns">
+        <div>
+          <h4 data-i18n="footer.links">Liens</h4>
+          <a href="./pages/services.html" data-i18n="nav.services">Services</a><br/>
+          <a href="./pages/produits.html" data-i18n="nav.products">Produits</a><br/>
+          <a href="./pages/contact.html" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div>
+          <h4 data-i18n="footer.legal">Légal</h4>
+          <a href="./pages/mentions.html" data-i18n="legal.mentions">Mentions légales</a><br/>
+          <a href="./pages/privacy.html" data-i18n="legal.privacy">Politique de confidentialité</a>
+        </div>
+        <div>
+          <h4>Réseaux</h4>
+          <a href="https://www.instagram.com/poolsbrothers" target="_blank" rel="noopener">Instagram</a><br/>
+          <a href="https://www.Whatsapp.com/poolsbrothers" target="_blank" rel="noopener">WhatsApp</a><br/>
+          <a href="./pages/pool_monthly_dashboard.html" target="_blank" rel="noopener">Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bannière cookies -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" data-i18n-attr="aria-label:cookies.banner_aria">
+    <div class="cookie-content">
+      <p class="mb-0" data-i18n="cookies.text">
+        Nous utilisons des cookies techniques pour assurer le bon fonctionnement du site.
+      </p>
+      <div class="cookie-actions">
+        <a href="./privacy.html" data-i18n="cookies.learn_more">En savoir plus</a>
+        <button id="cookie-accept" class="btn btn-primary" type="button" data-i18n="cookies.accept">Accepter</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Widget météo mobile (bottom bar) -->
+  <div id="weather-widget-mobile">
+    <div class="mobile-weather-item"><span>🌡️</span><span id="mobile-temp">--°</span></div>
+    <div class="mobile-weather-item"><span>💧</span><span id="mobile-humidity">--%</span></div>
+    <div class="mobile-weather-item"><span>🌊</span><span id="mobile-water">--°</span></div>
+    <div class="mobile-weather-item"><span>💨</span><span id="mobile-wind">-- km/h</span></div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="./assets/JS/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<!----------------------------HEAD--------------------------> 
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PoolBrothers – Produits & Services pour piscines</title>
+  <meta name="description" content="PoolBrothers : spécialiste d'entretien de piscine à Seignosse." />
+  <link rel="stylesheet" href="../assets/CSS/style.css">
+</head>
+
+<!-----------------------------BODY--------------------------> 
+
+<body>
+  
+  <!-- Header -->
+  <header class="site" id="siteHeader">
+
+    <div class="container nav">
+
+      <a  class="brand2">
+        <!--<img class="brand-img" src="./logo/PB3.jpg" alt="Logo PoolBrothers"> -->
+        <span>PoolBrothers</span>
+      </a>
+
+      <button type="button" class="menu-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav id="primary-nav" class="nav-links" aria-label="Navigation principale">
+        <a href="./index.html">Accueil</a>
+        <a href="./produits.html">Produits</a>
+        <a href="./contact.html#devis">Contact</a>
+      </nav>
+
+            <div class="lang-switch">
+        <label for="lang" class="sr-only">Langue</label>
+        <select id="lang" aria-label="Changer de langue">
+          <option value="fr">FR</option>
+          <option value="en">EN</option>
+          <option value="ar">AR</option>
+          <option value="es">ES</option>
+        </select>
+      </div>
+
+    </div>
+  </header>
+
+  <!------ FIN Header ------>
+
+  <section class="page-head">
+    <div class="container">
+      <h1>Mentions légales</h1>
+      <p class="section-sub">Dernière mise à jour : 8 décembre 2025</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="card">
+        <h2>Éditeur du site</h2>
+        <p><strong>Pool's Brothers</strong> – Zone de Larrigan, Seignosse 40510<br/>
+          Email : poolsbrothers@gmail.com – Tél : +971 4 000 0000</p>
+
+        <h2>🏢Hébergement</h2>
+        <p>Ce site peut être hébergé chez un fournisseur cloud (ex. Azure). Les informations seront mises à jour lors du déploiement.</p>
+
+        <h2>🖋️Propriété intellectuelle</h2>
+        <p>Le contenu (textes, logos, visuels) est la propriété de Pool Shop, sauf mention contraire. Toute reproduction non autorisée est interdite.</p>
+
+        <h2>🔐Responsabilité</h2>
+        <p>Les informations publiées sont indicatives. Pool Shop ne saurait être responsable des erreurs ou omissions.</p>
+
+        <h2>Liens externes</h2>
+        <p>Les liens vers des sites tiers sont fournis pour convenance. Pool Shop n’est pas responsable de leur contenu.</p>
+
+        <h2>Contact</h2>
+        <p>Pour toute question : <a href="mailto:poolsbrothers@gmail.com">poolsbrothers@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-------------------- Footer -------------------------->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand mb-1">
+          <img class="brand-img" src="../logo/hero.jpg" alt="Logo PoolBrothers">
+          <span>Pool's Brothers</span>
+        </div>
+        <p class="mb-1" data-i18n="footer.desc">Produits, équipements et services d'entretien à Seignosse.</p>
+        <p class="copyright mb-0">
+          © <span id="year">2024</span> Pool's Brothers. <span data-i18n="footer.rights">Tous droits réservés.</span>
+        </p>
+      </div>
+
+      <div class="footer-columns">
+        <div>
+          <h4 data-i18n="footer.links">Liens</h4>
+          <a href="./services.html" data-i18n="nav.services">Services</a><br/>
+          <a href="./produits.html" data-i18n="nav.products">Produits</a><br/>
+          <a href="./contact.html" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div>
+          <h4 data-i18n="footer.legal">Légal</h4>
+          <a href="./mentions.html" data-i18n="legal.mentions">Mentions légales</a><br/>
+          <a href="./privacy.html" data-i18n="legal.privacy">Politique de confidentialité</a>
+        </div>
+        <div>
+          <h4>Réseaux</h4>
+          <a href="https://www.instagram.com/poolsbrothers" target="_blank" rel="noopener">Instagram</a><br/>
+          <a href="https://www.Whatsapp.com/poolsbrothers" target="_blank" rel="noopener">WhatsApp</a><br/>
+          <a href="./pool_monthly_dashboard.html" target="_blank" rel="noopener">Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Widget météo mobile (bottom bar) -->
+  <div id="weather-widget-mobile">
+    <div class="mobile-weather-item"><span>🌡️</span><span id="mobile-temp">--°</span></div>
+    <div class="mobile-weather-item"><span>💧</span><span id="mobile-humidity">--%</span></div>
+    <div class="mobile-weather-item"><span>🌊</span><span id="mobile-water">--°</span></div>
+    <div class="mobile-weather-item"><span>💨</span><span id="mobile-wind">-- km/h</span></div>
+  </div>
+
+<script src="../assets/JS/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<!----------------------------HEAD--------------------------> 
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="meta.title">Pool's Brothers – Produits & Services pour piscines</title>
+  <meta name="description" data-i18n="meta.desc" content="Pool's Brothers : spécialiste d'entretien de piscine à Seignosse." />
+  <link rel="stylesheet" href="../assets/CSS/style.css">
+</head>
+<!-----------------------------BODY--------------------------> 
+<body>
+<!-----------------------------Header------------------------>
+  <header class="site" id="siteHeader">
+    <div class="container nav">
+      <div class="brand2">
+        <img class="brand-img" src="../logo/hero.jpg" alt="Logo Pool's Brothers">
+        <span>Pool's Brothers</span>
+      </div>
+      <button type="button" class="menu-toggle" 
+              aria-controls="primary-nav" 
+              aria-expanded="false" 
+              data-i18n-attr="aria-label:nav.open_menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav id="primary-nav" class="nav-links" data-i18n-attr="aria-label:nav.primary">
+        <a href="../index.html" data-i18n="nav.home">Accueil</a>
+        <a href="./produits.html" data-i18n="nav.products">Produits</a>
+        <a href="./services.html" data-i18n="nav.services">Services</a>
+      </nav>
+      <div class="lang-switch">
+        <label for="lang" class="sr-only" data-i18n="nav.lang_label">Langue</label>
+        <select id="lang" data-i18n-attr="aria-label:nav.lang_aria">
+          <option value="fr">FR</option>
+          <option value="en">EN</option>
+          <option value="ar">AR</option>
+          <option value="es">ES</option>
+        </select>
+      </div>
+    </div>
+  </header>
+  <!------------------------Hero---------------------->
+  <section class="page-head">
+    <div class="container">
+      <h1 data-i18n="contact.heading">Contact & devis</h1>
+      <p class="section-sub" data-i18n="contact.sub">Dites‑nous votre besoin : type de bassin, volume, équipement actuel, problème constaté…</p>
+    </div>
+  </section>
+
+  <section id="devis">
+    <div class="container contact-wrapper">
+      <form class="contact" id="contactForm" novalidate>
+        <label for="name" data-i18n="contact.name">Nom complet</label>
+        <input id="name" name="name" type="text" class="field" placeholder="Votre nom" required data-i18n-attr="placeholder:contact.name_ph" />
+
+        <label for="email" data-i18n="contact.email">E‑mail</label>
+        <input id="email" name="email" type="email" class="field" placeholder="vous@exemple.com" required data-i18n-attr="placeholder:contact.email_ph" />
+        <div class="hint" data-i18n="contact.privacy_hint">Nous ne partagerons jamais votre e‑mail.</div>
+
+        <label for="topic" data-i18n="contact.topic">Sujet</label>
+        <select id="topic" name="topic" class="field">
+          <option data-i18n="contact.topic_quote">Demande de devis</option>
+          <option data-i18n="contact.topic_question">Question technique</option>
+          <option data-i18n="contact.topic_service">Service & entretien</option>
+          <option data-i18n="contact.topic_other">Autre</option>
+        </select>
+
+        <label for="message" data-i18n="contact.message">Message</label>
+        <textarea id="message" name="message" class="field" placeholder="Expliquez votre besoin…" required data-i18n-attr="placeholder:contact.message_ph"></textarea>
+
+        <div class="mb-2">
+          <input id="consent" type="checkbox" required />
+          <label for="consent" data-i18n="contact.consent">J’accepte d’être recontacté par PoolBrothers.</label>
+        </div>
+
+        <button class="btn btn-primary" type="submit" data-i18n="cta.send">Envoyer</button>
+        <span id="formStatus" class="hint" role="status" aria-live="polite"></span>
+      </form>
+
+      <aside class="info-card">
+        <p class="pill mb-2" data-i18n="contact.coords">Coordonnées</p>
+        <p class="mb-1"><strong data-i18n="contact.showroom">Showroom :</strong><br/>Zone de Larrigan, 40510 Seignosse, France</p>
+        <p class="mb-1"><strong data-i18n="contact.phone">Tél :</strong> +971 4 000 0000</p>
+        <p class="mb-1"><strong>E‑mail :</strong> poolsbrothers@gmail.com</p>
+        <p class="mb-1"><strong data-i18n="contact.hours">Horaires :</strong> Dim‑Jeu 9:00–18:00</p>
+        <hr/>
+
+<!-- Boutons sociaux flottants -->
+
+        <div class="social-fab">
+          
+          <!-- WhatsApp -->
+          <a href="https://wa.me/33612345678?text=Bonjour%20PoolBrothers,%20je%20souhaite%20obtenir%20des%20informations." 
+            class="fab fab-whatsapp" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Contactez-nous sur WhatsApp">
+            <svg viewBox="0 0 32 32" fill="currentColor">
+              <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.203 1.393 1.393-5.203-0.292-0.507c-1.224-2.162-1.87-4.588-1.87-7.07 0-7.72 6.28-14 14-14s14 6.28 14 14-6.28 14-14 14zM21.305 18.305c-0.288-0.144-1.701-0.839-1.965-0.936-0.264-0.097-0.456-0.144-0.648 0.144s-0.744 0.936-0.912 1.128c-0.168 0.192-0.336 0.216-0.624 0.072s-1.213-0.447-2.31-1.426c-0.854-0.762-1.43-1.704-1.598-1.992s-0.018-0.443 0.126-0.587c0.129-0.129 0.288-0.336 0.432-0.504s0.192-0.288 0.288-0.48c0.096-0.192 0.048-0.36-0.024-0.504s-0.648-1.562-0.888-2.139c-0.234-0.562-0.472-0.486-0.648-0.495-0.168-0.008-0.36-0.010-0.552-0.010s-0.504 0.072-0.768 0.36c-0.264 0.288-1.008 0.984-1.008 2.4s1.032 2.784 1.176 2.976c0.144 0.192 2.034 3.102 4.929 4.35 0.688 0.296 1.225 0.473 1.644 0.605 0.691 0.220 1.320 0.189 1.817 0.115 0.554-0.083 1.701-0.696 1.941-1.368s0.240-1.248 0.168-1.368c-0.072-0.12-0.264-0.192-0.552-0.336z"/>
+            </svg>
+          </a>
+          
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/votrecompte" 
+            class="fab fab-instagram" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Suivez-nous sur Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/company/votre-entreprise" 
+            class="fab fab-linkedin" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Suivez-nous sur LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/votrepagefacebook" 
+            class="fab fab-facebook" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Suivez-nous sur Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+
+        </div>
+
+        <img class="brand-img2" src="../logo/hero.jpg" alt="Logo PoolBrothers">
+      </aside>
+    </div>
+  </section>
+
+<!-------------------- Footer -------------------------->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand mb-1">
+          <img class="brand-img" src="../logo/hero.jpg" alt="Logo PoolBrothers">
+          <span>Pool's Brothers</span>
+        </div>
+        <p class="mb-1" data-i18n="footer.desc">Produits, équipements et services d'entretien à Seignosse.</p>
+        <p class="copyright mb-0">
+          © <span id="year">2024</span> Pool's Brothers. <span data-i18n="footer.rights">Tous droits réservés.</span>
+        </p>
+      </div>
+
+      <div class="footer-columns">
+        <div>
+          <h4 data-i18n="footer.links">Liens</h4>
+          <a href="../index.html" data-i18n="nav.index">Accueil</a><br/>
+          <a href="./produits.html" data-i18n="nav.products">Produits</a><br/>
+          <a href="./services.html" data-i18n="nav.services">Services</a>
+        </div>
+        <div>
+          <h4 data-i18n="footer.legal">Légal</h4>
+          <a href="./mentions.html" data-i18n="legal.mentions">Mentions légales</a><br/>
+          <a href="./privacy.html" data-i18n="legal.privacy">Politique de confidentialité</a>
+        </div>
+        <div>
+          <h4>Réseaux</h4>
+          <a href="https://www.instagram.com/poolsbrothers" target="_blank" rel="noopener">Instagram</a><br/>
+          <a href="https://www.Whatsapp.com/poolsbrothers" target="_blank" rel="noopener">WhatsApp</a><br/>
+          <a href="./pool_monthly_dashboard.html" target="_blank" rel="noopener">Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Widget météo mobile (bottom bar) -->
+  <div id="weather-widget-mobile">
+    <div class="mobile-weather-item"><span>🌡️</span><span id="mobile-temp">--°</span></div>
+    <div class="mobile-weather-item"><span>💧</span><span id="mobile-humidity">--%</span></div>
+    <div class="mobile-weather-item"><span>🌊</span><span id="mobile-water">--°</span></div>
+    <div class="mobile-weather-item"><span>💨</span><span id="mobile-wind">-- km/h</span></div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="../assets/JS/script.js"></script>
+
+</body>
+</html>
