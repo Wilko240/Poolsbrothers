@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // ============================================
 
 // Remplacez ces valeurs par les vôtres
-const EMAILJS_PUBLIC_KEY = "BtGwjDAwJCVDdl7zz";  // Ex: qA1bC2dE3fG4hI5jK
-const EMAILJS_SERVICE_ID = "PoolsBrothersEmails";    // Ex: service_abc123
-const EMAILJS_TEMPLATE_ID = "template_ijp8gpf";  // Ex: template_xyz789
+const EMAILJS_PUBLIC_KEY = "xxx";  // Ex: qA1bC2dE3fG4hI5jK
+const EMAILJS_SERVICE_ID = "xxx";    // Ex: service_abc123
+const EMAILJS_TEMPLATE_ID = "xxx";  // Ex: template_xyz789
 
 // Initialiser EmailJS
 (function() {
