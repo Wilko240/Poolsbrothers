@@ -103,9 +103,65 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* ============================================
-   PANIER D'ACHAT (VERSION MÉMOIRE)
+   TOAST NOTIFICATIONS MODERNES
    ============================================ */
-let cartItems = [];
+function showToast(message, type = 'info', title = '') {
+  // Créer le conteneur s'il n'existe pas
+  let container = document.getElementById('toast-container');
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'toast-container';
+    document.body.appendChild(container);
+  }
+
+  // Icônes selon le type
+  const icons = {
+    success: '✓',
+    error: '✕',
+    info: 'ℹ'
+  };
+
+  // Créer le toast
+  const toast = document.createElement('div');
+  toast.className = `toast toast-${type}`;
+  toast.innerHTML = `
+    <span class="toast-icon">${icons[type] || icons.info}</span>
+    <div class="toast-content">
+      ${title ? `<div class="toast-title">${title}</div>` : ''}
+      <div class="toast-message">${message}</div>
+    </div>
+  `;
+
+  container.appendChild(toast);
+
+  // Supprimer après 3 secondes
+  setTimeout(() => {
+    toast.remove();
+  }, 3000);
+}
+
+/* ============================================
+   PANIER D'ACHAT (VERSION LOCALSTORAGE)
+   ============================================ */
+function loadCart() {
+  try {
+    const saved = localStorage.getItem('poolsbrothers_cart');
+    return saved ? JSON.parse(saved) : [];
+  } catch (e) {
+    console.error('Erreur chargement panier:', e);
+    return [];
+  }
+}
+
+function saveCart(cart) {
+  try {
+    localStorage.setItem('poolsbrothers_cart', JSON.stringify(cart));
+  } catch (e) {
+    console.error('Erreur sauvegarde panier:', e);
+  }
+}
+
+let cartItems = loadCart();
 
 function addToCart(productName) {
   const newItem = {
@@ -113,11 +169,16 @@ function addToCart(productName) {
     timestamp: Date.now(),
     id: Math.random().toString(36).substr(2, 9)
   };
-  
+
   cartItems.push(newItem);
-  
-  alert(`"${productName}" ajouté au panier (démo). Panier: ${cartItems.length} article(s).`);
-  
+  saveCart(cartItems);
+
+  showToast(
+    `Panier: ${cartItems.length} article(s)`,
+    'success',
+    `"${productName}" ajouté`
+  );
+
   console.log('Panier actuel:', cartItems);
 }
 
@@ -127,6 +188,8 @@ function getCart() {
 
 function clearCart() {
   cartItems = [];
+  saveCart(cartItems);
+  showToast('Panier vidé', 'info');
 }
 
 /* ============================================
@@ -231,6 +294,7 @@ const FAKE_PRODUCTS = [
     id: 1,
     name: 'Pompe 1 HP – FlowMax',
     price: 799,
+    currency: '€',
     category: 'pompes',
     label: 'Pompe 1 HP'
   },
@@ -238,6 +302,7 @@ const FAKE_PRODUCTS = [
     id: 2,
     name: 'Filtre à sable 500 mm',
     price: 1099,
+    currency: '€',
     category: 'filtres',
     label: 'Filtre 500 mm'
   },
@@ -245,6 +310,7 @@ const FAKE_PRODUCTS = [
     id: 3,
     name: 'Robot électrique – CleanPro',
     price: 2499,
+    currency: '€',
     category: 'robots',
     label: 'Robot CleanPro'
   },
@@ -252,6 +318,7 @@ const FAKE_PRODUCTS = [
     id: 4,
     name: 'Kit traitement chlore – 10 kg',
     price: 299,
+    currency: '€',
     category: 'traitement',
     label: 'Kit chlore 10 kg'
   },
@@ -259,6 +326,7 @@ const FAKE_PRODUCTS = [
     id: 5,
     name: 'Électrolyseur au sel – SaltPro',
     price: 3299,
+    currency: '€',
     category: 'traitement',
     label: 'Electrolyseur'
   },
@@ -266,6 +334,7 @@ const FAKE_PRODUCTS = [
     id: 6,
     name: 'Pompe à vitesse variable – EcoFlow',
     price: 1899,
+    currency: '€',
     category: 'pompes',
     label: 'Pompe VS'
   }
@@ -329,7 +398,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <span class="img-label">${product.label}</span>
           </div>
           <h4>${product.name}</h4>
-          <div class="price">AED ${product.price.toLocaleString('en-US')}</div>
+          <div class="price">${product.price.toLocaleString('fr-FR')} ${product.currency || '€'}</div>
           <p class="mb-2">Produit de qualité professionnelle.</p>
           <div class="actions">
             <button class="btn btn-outline" onclick="addToCart('${product.name.replace(/'/g, "\\'")}')">
@@ -373,7 +442,7 @@ const REVIEWS = [
   },
   {
     stars: 5,
-    text: "Robot CleanPro top — bassin impeccable en 2h. Livraison rapide à Dubai Marina.",
+    text: "Robot CleanPro top — bassin impeccable en 2h. Livraison rapide à Seignosse.",
     author: "Sophie L."
   },
   {
@@ -515,12 +584,12 @@ const I18N = {
       contract_desc: "Visites planifiées, tests de l'eau, ajustements chimiques, rapport PDF.",
       freq: "Hebdomadaire / bi‑hebdomadaire",
       includes: "Traitements inclus (forfaits)",
-      price: "À partir de AED 299 / mois",
+      price: "À partir de 299 € / mois",
       install: "Installation & mise en service",
       install_desc: "Pompes, filtres, électrolyseurs, robots, automatismes.",
       quote_24h: "Devis sous 24 h",
       warranty: "Garantie main‑d'œuvre 12 mois",
-      area: "Déplacement Dubai & EAU"
+      area: "Déplacement Seignosse & Landes"
     },
     reviews: {
       title: "Avis clients",
@@ -592,7 +661,7 @@ const I18N = {
   ar: {
     meta: {
       title: "Pool Brothers – منتجات وخدمات حمامات السباحة",
-      desc: "Pool Brothers: متخصصون في منتجات حمامات السباحة في دبي. مضخات، فلاتر، روبوتات، معالجة المياه، التركيب والصيانة.",
+      desc: "Pool Brothers: متخصصون في منتجات حمامات السباحة في Seignosse. مضخات، فلاتر، روبوتات، معالجة المياه، التركيب والصيانة.",
       products_title: "Pool Brothers – كتالوج المنتجات",
       products_desc: "مضخات، فلاتر، روبوتات، معالجة وإكسسوارات.",
       contact_title: "Pool Brothers – التواصل وطلب عرض سعر",
@@ -612,7 +681,7 @@ const I18N = {
     },
     hero: {
       title: "كل ما تحتاجه لحمام سباحة <em>مثالي</em> — منتجات ومعدات وصيانة",
-      lead: "مضخات، فلاتر، روبوتات، معالجة المياه، إكسسوارات... توصيل سريع ونصائح الخبراء. مقرنا في دبي، نخدم الأفراد والمحترفين."
+      lead: "مضخات، فلاتر، روبوتات، معالجة المياه، إكسسوارات... توصيل سريع ونصائح الخبراء. مقرنا في Seignosse، نخدم الأفراد والمحترفين."
     },
     badge: {
       new: "جديد • الشتاء"
@@ -638,12 +707,12 @@ const I18N = {
       contract_desc: "زيارات مجدولة، اختبارات المياه، تعديلات كيميائية، تقرير PDF.",
       freq: "أسبوعي / نصف أسبوعي",
       includes: "المعالجات مشمولة (الباقات)",
-      price: "ابتداءً من 299 درهم / شهر",
+      price: "ابتداءً من 299 € / شهر",
       install: "التركيب والتشغيل",
       install_desc: "مضخات، فلاتر، محللات كهربائية، روبوتات، أنظمة آلية.",
       quote_24h: "عرض سعر خلال 24 ساعة",
       warranty: "ضمان العمل 12 شهراً",
-      area: "التنقل في دبي والإمارات"
+      area: "التنقل في Seignosse et Landes"
     },
     reviews: {
       title: "تقييمات العملاء",
@@ -653,7 +722,7 @@ const I18N = {
       avg_aria: "التقييم المتوسط 4.8 من 5"
     },
     footer: {
-      desc: "منتجات ومعدات وخدمات صيانة في دبي.",
+      desc: "منتجات ومعدات وخدمات صيانة في Seignosse.",
       rights: "جميع الحقوق محفوظة.",
       links: "روابط",
       legal: "قانوني"
@@ -715,7 +784,7 @@ const I18N = {
   en: {
     meta: {
       title: "Pool's Brothers – Pool Products & Services",
-      desc: "Pool's Brothers: pool products specialist in Dubai. Pumps, filters, robots, water treatment, installation and maintenance.",
+      desc: "Pool's Brothers: pool products specialist in Seignosse, France. Pumps, filters, robots, water treatment, installation and maintenance.",
       products_title: "Pool's Brothers – Product Catalog",
       products_desc: "Pumps, filters, robots, treatment and accessories.",
       contact_title: "Pool's Brothers – Contact & Quote",
@@ -735,7 +804,7 @@ const I18N = {
     },
     hero: {
       title: "Everything for a <em>pristine</em> pool — products, equipment and maintenance",
-      lead: "Pumps, filters, robots, water treatment, accessories... Fast delivery and expert advice. Based in Dubai, we serve individuals and professionals."
+      lead: "Pumps, filters, robots, water treatment, accessories... Fast delivery and expert advice. Based in Seignosse, we serve individuals and professionals."
     },
     badge: {
       new: "Seignosse - neighboors"
@@ -761,12 +830,12 @@ const I18N = {
       contract_desc: "Scheduled visits, water tests, chemical adjustments, PDF report.",
       freq: "Weekly / bi-weekly",
       includes: "Treatments included (packages)",
-      price: "From AED 299 / month",
+      price: "From 299 € / month",
       install: "Installation & commissioning",
       install_desc: "Pumps, filters, salt chlorinators, robots, automation.",
       quote_24h: "Quote within 24 hours",
       warranty: "12-month labor warranty",
-      area: "Service in Dubai & UAE"
+      area: "Service in Seignosse & Landes area"
     },
     reviews: {
       title: "Customer reviews",
@@ -776,7 +845,7 @@ const I18N = {
       avg_aria: "Average rating 4.8 out of 5"
     },
     footer: {
-      desc: "Products, equipment and maintenance services in Dubai.",
+      desc: "Products, equipment and maintenance services in Seignosse.",
       rights: "All rights reserved.",
       links: "Links",
       legal: "Legal"
@@ -838,7 +907,7 @@ const I18N = {
   es: {
     meta: {
       title: "Pool's Brothers – Productos y servicios para piscinas",
-      desc: "Pool's Brothers: especialista en productos para piscinas en Dubái. Bombas, filtros, robots, tratamiento del agua, instalación y mantenimiento.",
+      desc: "Pool's Brothers: especialista en productos para piscinas en Seignosse, Francia. Bombas, filtros, robots, tratamiento del agua, instalación y mantenimiento.",
       products_title: "Pool's Brothers – Catálogo de productos",
       products_desc: "Bombas, filtros, robots, tratamiento y accesorios.",
       contact_title: "Pool's Brothers – Contacto y presupuesto",
@@ -858,7 +927,7 @@ const I18N = {
     },
     hero: {
       title: "Todo para una piscina impecable — productos, equipamiento y mantenimiento",
-      lead: "Bombas, filtros, robots, tratamiento del agua, accesorios... Entrega rápida y asesoramiento experto. Con sede en Dubái, atendemos a particulares y profesionales."
+      lead: "Bombas, filtros, robots, tratamiento del agua, accesorios... Entrega rápida y asesoramiento experto. Con sede en Seignosse, atendemos a particulares y profesionales."
     },
     badge: {
       new: "Seignosse - vecinos"
@@ -884,12 +953,12 @@ const I18N = {
       contract_desc: "Visitas programadas, análisis del agua, ajustes químicos, informe en PDF.",
       freq: "Semanal / quincenal",
       includes: "Tratamientos incluidos (paquetes)",
-      price: "Desde AED 299 / mes",
+      price: "Desde 299 € / mes",
       install: "Instalación y puesta en marcha",
       install_desc: "Bombas, filtros, cloradores salinos, robots, automatización.",
       quote_24h: "Presupuesto en 24 horas",
       warranty: "Garantía de mano de obra de 12 meses",
-      area: "Servicio en Dubái y EAU"
+      area: "Servicio en Seignosse y Landes"
     },
     reviews: {
       title: "Opiniones de clientes",
@@ -899,7 +968,7 @@ const I18N = {
       avg_aria: "Valoración media 4,8 sobre 5"
     },
     footer: {
-      desc: "Productos, equipamiento y servicios de mantenimiento en Dubái.",
+      desc: "Productos, equipamiento y servicios de mantenimiento en Seignosse.",
       rights: "Todos los derechos reservados.",
       links: "Enlaces",
       legal: "Legal"

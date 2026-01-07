@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="fr">
-<!----------------------------HEAD--------------------------> 
+<!----------------------------HEAD-------------------------->
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title data-i18n="meta.title">Pool's Brothers – Produits & Services pour piscines</title>
   <meta name="description" data-i18n="meta.desc" content="Pool's Brothers : spécialiste d'entretien de piscine à Seignosse." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://poolsbrothers.com/" />
+  <meta property="og:title" content="Pool's Brothers – Produits & Services pour piscines" />
+  <meta property="og:description" content="Spécialiste des produits et services pour piscines à Seignosse. Pompes, filtres, robots, entretien et installation." />
+  <meta property="og:image" content="https://poolsbrothers.com/logo/hero.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://poolsbrothers.com/" />
+  <meta property="twitter:title" content="Pool's Brothers – Produits & Services pour piscines" />
+  <meta property="twitter:description" content="Spécialiste des produits et services pour piscines à Seignosse. Pompes, filtres, robots, entretien et installation." />
+  <meta property="twitter:image" content="https://poolsbrothers.com/logo/hero.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./logo/hero.jpg" />
+  <link rel="apple-touch-icon" href="./logo/hero.jpg" />
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#0077b6" />
+
   <link rel="stylesheet" href="./assets/CSS/style.css">
+  <link rel="manifest" href="./manifest.json">
 </head>
 
 <!-----------------------------BODY--------------------------> 
@@ -46,7 +69,7 @@
   <!------------------------Hero---------------------->
   <section class="hero">
     <div class="container center">
-      <p class="badge" data-i18n="badge.new">Seignosse et TEST</p>
+      <p class="badge" data-i18n="badge.new">Seignosse & alentours</p>
       <h1 data-i18n="hero.title">Tout pour une piscine propre — produits, équipements et entretien</h1>
       <p class="lead" data-i18n="hero.lead">
         Pompes, filtres, robots, traitement de l'eau, accessoires… Livraison rapide et conseils d'experts.
@@ -103,12 +126,12 @@
           <ul class="mb-0">
             <li data-i18n="services.quote_24h">Devis sous 24 h</li>
             <li data-i18n="services.warranty">Garantie main‑d'œuvre 12 mois</li>
-            <li><strong data-i18n="services.area">Déplacement Dubai & EAU</strong></li>
+            <li><strong data-i18n="services.area">Déplacement Seignosse & Landes</strong></li>
           </ul>
         </div>
       </div>
       <div class="actions center">
-        <a href="./contact.html#devis" class="btn btn-primary" data-i18n="cta.quote">Demander un devis</a>
+        <a href="./pages/contact.html#devis" class="btn btn-primary" data-i18n="cta.quote">Demander un devis</a>
       </div>
     </div>
   </section>
@@ -123,10 +146,10 @@
           <!-- Produit 1 -->
         <article class="card product">
           <div class="img-box">
-            <img class="brand-img2" src="../images/pompe1.jpg" alt="Pompe 1 HP – FlowMax">
+            <img class="brand-img2" src="./images/pompe1.jpg" alt="Pompe 1 HP – FlowMax" loading="lazy">
           </div>
           <h4>Pompe 1 HP – FlowMax</h4>
-          <div class="price">AED 799</div>
+          <div class="price">799 €</div>
           <p class="mb-2">Pompe éco‑énergétique pour bassins jusqu'à 40 m³.</p>
           <div class="actions">
             <button class="btn btn-outline" onclick="addToCart('Pompe 1 HP – FlowMax')" data-i18n="cta.add">Ajouter</button>
@@ -137,10 +160,10 @@
           <!-- Produit 2 -->
         <article class="card product">
           <div class="img-box">
-            <img class="brand-img2" src="../images/filtre1.jpg" alt="Filtre a sable">
+            <img class="brand-img2" src="./images/filtre1.jpg" alt="Filtre a sable" loading="lazy">
           </div>
           <h4>Filtre à sable 500 mm</h4>
-          <div class="price">AED 1 099</div>
+          <div class="price">1 099 €</div>
           <p class="mb-2">Cuve renforcée, vanne 6 voies, média inclus.</p>
           <div class="actions">
             <button class="btn btn-outline" onclick="addToCart('Filtre à sable 500 mm')" data-i18n="cta.add">Ajouter</button>
@@ -151,10 +174,10 @@
           <!-- Produit 3 -->
         <article class="card product">
           <div class="img-box">
-            <img class="brand-img2" src="../images/robot1.jpg" alt="Robot Clean Pro">
+            <img class="brand-img2" src="./images/robot1.jpg" alt="Robot Clean Pro" loading="lazy">
           </div>
           <h4>Robot électrique – CleanPro</h4>
-          <div class="price">AED 2 499</div>
+          <div class="price">2 499 €</div>
           <p class="mb-2">Nettoyage fond + parois, cycle 2 h, panier Easy‑Clean.</p>
           <div class="actions">
             <button class="btn btn-outline" onclick="addToCart('Robot électrique – CleanPro')" data-i18n="cta.add">Ajouter</button>
@@ -213,7 +236,7 @@
         <div>
           <h4>Réseaux</h4>
           <a href="https://www.instagram.com/poolsbrothers" target="_blank" rel="noopener">Instagram</a><br/>
-          <a href="https://www.Whatsapp.com/poolsbrothers" target="_blank" rel="noopener">WhatsApp</a><br/>
+          <a href="https://wa.me/33XXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a><br/>
           <a href="./pages/pool_monthly_dashboard.html" target="_blank" rel="noopener">Dashboard</a>
         </div>
       </div>
@@ -227,7 +250,7 @@
         Nous utilisons des cookies techniques pour assurer le bon fonctionnement du site.
       </p>
       <div class="cookie-actions">
-        <a href="./privacy.html" data-i18n="cookies.learn_more">En savoir plus</a>
+        <a href="./pages/privacy.html" data-i18n="cookies.learn_more">En savoir plus</a>
         <button id="cookie-accept" class="btn btn-primary" type="button" data-i18n="cookies.accept">Accepter</button>
       </div>
     </div>

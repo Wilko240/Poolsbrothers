@@ -1,0 +1,29 @@
+{
+  "name": "Pool's Brothers - Produits & Services pour piscines",
+  "short_name": "Pool's Brothers",
+  "description": "Spécialiste des produits et services pour piscines à Seignosse. Pompes, filtres, robots, entretien et installation.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f0f8ff",
+  "theme_color": "#0077b6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./logo/hero.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./logo/hero.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "lifestyle", "shopping"],
+  "lang": "fr",
+  "dir": "ltr",
+  "scope": "/",
+  "screenshots": []
+}
