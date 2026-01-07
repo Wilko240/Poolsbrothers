@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Fond dégradé bleu -->
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00b4d8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0077b6;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Cercle de fond -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad)" filter="url(#shadow)"/>
+
+  <!-- Vague décorative -->
+  <path d="M 15 60 Q 30 55, 50 60 T 85 60 L 85 100 L 15 100 Z" fill="rgba(255,255,255,0.15)"/>
+  <path d="M 15 70 Q 30 65, 50 70 T 85 70 L 85 100 L 15 100 Z" fill="rgba(255,255,255,0.1)"/>
+
+  <!-- Lettres PB -->
+  <text x="50" y="58" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="white" text-anchor="middle">PB</text>
+</svg>

@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://poolsbrothers.com/sitemap.xml
+Sitemap: https://wilko240.github.io/Poolsbrothers/sitemap.xml
 
 # Désactiver l'indexation des ressources
 Disallow: /assets/
